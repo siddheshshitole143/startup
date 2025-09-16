@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= content_for?(:title) ? yield(:title) : "Startup" %></title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <link rel="icon" href="<%= asset_path 'theme/favicon.ico' %>">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <%= stylesheet_link_tag "theme/bootstrap.min", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "theme/lib/animate/animate.min", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "theme/lib/owlcarousel/assets/owl.carousel.min", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "theme/style", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= yield :styles %>
+</head>
+<body>
+  <%= render "shared/navbar" %>
+
+  <%= yield %>
+
+  <%= render "shared/footer" %>
+
+<!-- jQuery first -->
+<%= javascript_include_tag "vendor/jquery-3.4.1.min" %>
+<script>window.$ = window.jQuery;</script>
+
+<!-- Then Bootstrap & plugins -->
+<%= javascript_include_tag "vendor/bootstrap.bundle.min" %>
+<%= javascript_include_tag "vendor/wow.min" %>
+<%= javascript_include_tag "vendor/easing.min" %>
+<%= javascript_include_tag "vendor/waypoints.min" %>
+<%= javascript_include_tag "vendor/counterup.min" %>
+<%= javascript_include_tag "vendor/owl.carousel.min" %>
+
+<!-- Theme main.js last -->
+<%= javascript_include_tag "main" %>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+//= link_tree ../images
+//= link_tree ../stylesheets     
+//= link vendor/jquery-3.4.1.min.js
+//= link vendor/bootstrap.bundle.min.js
+//= link vendor/wow.min.js
+//= link vendor/easing.min.js
+//= link vendor/waypoints.min.js
+//= link vendor/counterup.min.js
+//= link vendor/owl.carousel.min.js
+//= link main.js
