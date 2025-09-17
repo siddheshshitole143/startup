@@ -1,5 +1,8 @@
 class PagesController < ApplicationController
+
   def home
+    @about_us = About.first
+    p @about_us
   end
 
   def about
