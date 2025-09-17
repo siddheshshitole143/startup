@@ -2,7 +2,7 @@ class PagesController < ApplicationController
 
   def home
     @about_us = About.first
-    p @about_us
+    @services = Service.all
   end
 
   def about
