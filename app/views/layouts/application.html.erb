@@ -55,8 +55,8 @@
     a:hover, .link-primary:hover{ color:var(--brand-700); }
 
     /* Topbar */
-    /*.topbar{ background:#0b1223; }*/
-    .topbar {background:#657179}
+    .topbar{ background:#0b1223; }
+    /*.topbar {background:#657179}*/
     /* Navbar */
     /*.navbar{ background:var(--brand); }*/
     .navbar .navbar-brand, .navbar .nav-link, .navbar .navbar-brand h1{ color:#fff !important; }
@@ -150,8 +150,8 @@
 .navbar.scrolled,
 .navbar.nav-sticky,
 .sticky-top.navbar {
-/*  background:#fff !important;*/
-background: #657179  !important;
+  background:#fff !important;
+/*background: #657179  !important;*/
 
   box-shadow:0 6px 18px rgba(0,0,0,.08);
 }
@@ -216,7 +216,7 @@ background: #657179  !important;
           <small class="text-light"><i class="fa fa-envelope-open me-2"></i>enquiry@gayatriinfotech.co.in</small>
         </div>
       </div>
-      <div class="col-lg-4 text-center text-lg-end">
+      <div class="col-lg-4 text-center text-lg-end" style="display:none">
         <div class="d-inline-flex align-items-center" style="height:45px;">
           <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
           <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
@@ -232,7 +232,7 @@ background: #657179  !important;
   <div class="container-fluid position-relative p-0">
     <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
       <a href="#" class="navbar-brand p-0">
-       <img class="class="m-0" style="height: 30px;"  src="/assets/logo-768.png" />
+       <img class="class="m-0" style="height: 30px;"  src="/assets/logo-768.webp" />
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="fa fa-bars"></span>
@@ -565,31 +565,32 @@ background: #657179  !important;
         </div>
         <div class="col-lg-5">
           <div class="bg-primary rounded h-100 d-flex align-items-center p-5 wow zoomIn" data-wow-delay="0.9s">
-            <form>
+       <form action="/request_quote" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
               <div class="row g-3">
                 <div class="col-xl-12">
-                  <input type="text" class="form-control bg-light border-0" placeholder="Your Name" style="height:55px;" />
+                  <input type="text" class="form-control bg-light border-0" name="request_quote[name]"  placeholder="Your Name" style="height:55px;" />
                 </div>
                 <div class="col-12">
-                  <input type="email" class="form-control bg-light border-0" placeholder="Your Email" style="height:55px;" />
+                  <input type="email" class="form-control bg-light border-0" name="request_quote[email]"  placeholder="Your Email" style="height:55px;" />
                 </div>
                 <div class="col-12">
-                  <select class="form-select bg-light border-0" style="height:55px;">
+                  <select class="form-select bg-light border-0" style="height:55px;" name="request_quote[service_name]">
                     <option selected>Select A Service</option>
-                    <option value="1">Service 1</option>
-                    <option value="2">Service 2</option>
-                    <option value="3">Service 3</option>
+                    <%@services.each do |service|%>
+                      <option value="<%=service.title%>"><%=service.title%></option>
+                    <%end%>
                   </select>
                 </div>
                 <div class="col-12">
-                  <textarea class="form-control bg-light border-0" rows="3" placeholder="Message"></textarea>
+                  <textarea class="form-control bg-light border-0" rows="3" placeholder="Message" name="request_quote[message]"></textarea>
                 </div>
                 <div class="col-12">
                   <button class="btn btn-dark w-100 py-3" type="submit">Request A Quote</button>
                 </div>
               </div>
-            </form>
-          </div>
+            </form>          </div>
         </div>
       </div>
     </div>
