@@ -65,3 +65,15 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem 'activeadmin'
+
+# Plus integrations with:
+gem 'devise'
+gem 'cancancan'
+gem 'draper'
+gem 'pundit'
+# for Sprockets + SCSS
+gem "sassc-rails", ">= 2.1.2"
+# make sure you also have:
+#gem "sprockets-rails"
