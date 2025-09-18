@@ -6,7 +6,7 @@ class PagesController < ApplicationController
   end
 
   def about
- @about_us = About.first
+    @about_us = About.first
   end
 
   def services
@@ -31,6 +31,7 @@ class PagesController < ApplicationController
   end
 
   def quote
+     @services = Service.all
   end
 
   def service
