@@ -197,8 +197,29 @@
 }
 
 .bg-white-image {
-  background: center / cover no-repeat image-url("/assets/section-background-3.webp");
-  min-height: 380px;
+  background-image: url("/assets/section-background-3.webp");
+  background-size: cover;         /* fill the box */
+  background-position: center;     /* keep subject centered */
+  background-repeat: no-repeat;
+  min-height: 120px;    
+}
+
+/* center each slide’s content */
+.vendor-carousel .owl-item {
+  display: flex !important;            /* Owl sets display; override it */
+  align-items: center;                  /* vertical center */
+  justify-content: center;              /* horizontal center */
+  height: 120px;                        /* pick a lane for logo row height */
+}
+
+/* make logos fit neatly without distortion */
+.vendor-carousel img {
+  max-height: 80px;                     /* tweak to taste */
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;                       /* avoid extra descender space */
 }
 </style>
 
