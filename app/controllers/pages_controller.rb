@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   end
 
   def about
+ @about_us = About.first
   end
 
   def services
